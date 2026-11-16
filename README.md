@@ -17,6 +17,10 @@ reporting with a clean revenue / cost / profit separation, and an audit trail.
 10. [Deployment on Render](#deployment-on-render) - 11. [Screenshots](#screenshots) - 12. [Verification status](#verification-status) -
 13. [Future improvements](#future-improvements)
 
+## Production readiness
+
+See [`docs/PRODUCTION-READINESS.md`](docs/PRODUCTION-READINESS.md) for the launch gates and safe rollout plan. The hosted free-tier deployment is a demo/staging environment, not suitable for permanent business records.
+
 ## Main features
 
 | Area | What it does |
