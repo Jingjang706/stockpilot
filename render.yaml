@@ -1,5 +1,5 @@
 # Render Blueprint: https://render.com/docs/blueprint-spec
-# Free demo deployment. Free Render Postgres expires after 30 days; do not use for permanent business data.
+# Production-oriented defaults. Choose durable paid infrastructure before storing business records.
 databases:
   - name: stockpilot-db
     plan: free
@@ -30,9 +30,11 @@ services:
       - key: CORS_ALLOWED_ORIGINS
         sync: false
       - key: FLYWAY_LOCATIONS
-        value: classpath:db/migration,classpath:db/seed
+        value: classpath:db/migration
       - key: APP_TIMEZONE
-        value: UTC
+        value: Asia/Phnom_Penh
+      - key: JPA_DDL_AUTO
+        value: validate
 
   - type: web
     name: stockpilot-web
