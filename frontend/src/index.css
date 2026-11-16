@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 246 245 242;
+  --surface: 255 255 255;
+  --raised: 250 249 247;
+  --line: 229 226 219;
+  --ink: 24 28 36;
+  --muted: 110 116 128;
+  --accent: 15 118 110;
+  --accent-ink: 255 255 255;
+  --good: 22 130 74;
+  --warn: 180 108 6;
+  --bad: 197 48 48;
+  --side: 12 18 30;
+  --shadow: 20 24 32;
+  color-scheme: light;
+}
+.dark {
+  --bg: 14 17 23;
+  --surface: 22 26 34;
+  --raised: 28 33 43;
+  --line: 44 51 64;
+  --ink: 233 236 241;
+  --muted: 142 150 165;
+  --accent: 45 190 170;
+  --accent-ink: 6 24 22;
+  --good: 74 200 130;
+  --warn: 235 170 60;
+  --bad: 245 110 110;
+  --side: 9 12 19;
+  --shadow: 0 0 0;
+  color-scheme: dark;
+}
+
+html, body, #root { height: 100%; }
+body { @apply bg-bg font-sans text-ink antialiased; font-feature-settings: 'cv11', 'ss01'; }
+* { @apply border-line; }
+:focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 2px; }
+::selection { background: rgb(var(--accent) / 0.25); }
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Printing: only the element marked .print-area is shown (receipts, reports). */
+@media print {
+  body * { visibility: hidden !important; }
+  .print-area, .print-area * { visibility: visible !important; }
+  .print-area { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none !important; border: none !important; }
+  .no-print { display: none !important; }
+}
